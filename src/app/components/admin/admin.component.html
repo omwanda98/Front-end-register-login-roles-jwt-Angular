@@ -13,7 +13,7 @@
   <ul>
     <li *ngFor="let user of users">
       {{ user.username }}
-      <button (click)="removeUser(user.userId)">Remove</button>
+      <button *ngIf="user.userId" (click)="removeUser(user.userId)">Remove</button>
     </li>
   </ul>
 </div>

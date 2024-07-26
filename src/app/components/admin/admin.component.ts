@@ -29,9 +29,11 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  removeUser(userId: number) {
-    this.adminService.removeUser(userId).subscribe(() => {
-      this.fetchUsers();
-    });
+  removeUser(userId: number | undefined) {
+    if (userId !== undefined) {
+      this.adminService.removeUser(userId).subscribe(() => {
+        this.fetchUsers();
+      });
+    }
   }
 }

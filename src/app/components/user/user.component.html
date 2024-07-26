@@ -1,0 +1,12 @@
+<h2>User Dashboard</h2>
+<div>
+  <h3>Your Details</h3>
+  <pre>{{ userDetails | json }}</pre>
+</div>
+
+<div>
+  <h3>Age Calculator</h3>
+  <input type="date" [(ngModel)]="birthdate">
+  <button (click)="calculateAge()">Calculate Age</button>
+  <p *ngIf="age !== undefined">Your age is: {{ age }}</p>
+</div>
